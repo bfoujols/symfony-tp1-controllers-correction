@@ -25,4 +25,8 @@ jobs:
       run: composer self-update && composer install && composer dump-autoload
 
     - name: Run tests 
-      run: vendor/bin/phpunit
+      run: XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover coverage.xml
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v5
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
