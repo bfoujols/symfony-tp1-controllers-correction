@@ -9,7 +9,7 @@ final class CatalogueControllerTest extends WebTestCase
     public function testIndex(): void
     {
         $client = static::createClient();
-        $client->request('GET', '/catalogue');
+        $client->request('GET', '/catalogue/');
 
         self::assertResponseIsSuccessful();
     }

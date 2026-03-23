@@ -9,7 +9,7 @@ final class AcceuilControllerTest extends WebTestCase
     public function testIndex(): void
     {
         $client = static::createClient();
-        $client->request('GET', '/acceuil');
+        $client->request('GET', '/');
 
         self::assertResponseIsSuccessful();
     }
